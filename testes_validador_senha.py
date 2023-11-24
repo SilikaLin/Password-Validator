@@ -21,5 +21,5 @@ class TestValidadorSenha(unittest.TestCase):
         self.assertFalse(validar_senha("SENHA_MAISCULA123"))  # Senha sem letra minúscula
         self.assertTrue(validar_senha("senha_minuscula123"))  # Senha com letra minúscula
 
-if __name__ == '__main__':
+    if __name__ == '__main__':
     unittest.main()
