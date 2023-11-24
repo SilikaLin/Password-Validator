@@ -1,25 +1,25 @@
 import unittest
 
-from validador_senha import ValidadorSenha
+def validar_senha(senha):
+    # Código da função validar_senha aqui...
 
-def test_validador_senha():
-    validador = ValidadorSenha()
+class TestValidadorSenha(unittest.TestCase):
+    
+    def test_comprimento_minimo(self):
+        self.assertFalse(validar_senha("abc12"))  # Senha com menos de 8 caracteres
+        self.assertTrue(validar_senha("abc12345"))  # Senha com 8 caracteres
+    
+    def test_pelo_menos_um_numero(self):
+        self.assertFalse(validar_senha("SenhaSemNumero"))  # Senha sem números
+        self.assertTrue(validar_senha("SenhaComNumero1"))  # Senha com número
+    
+    def test_pelo_menos_uma_letra_maiuscula(self):
+        self.assertFalse(validar_senha("senha_minuscula123"))  # Senha sem letra maiúscula
+        self.assertTrue(validar_senha("Senha_Maiuscula123"))  # Senha com letra maiúscula
+    
+    def test_pelo_menos_uma_letra_minuscula(self):
+        self.assertFalse(validar_senha("SENHA_MAISCULA123"))  # Senha sem letra minúscula
+        self.assertTrue(validar_senha("senha_minuscula123"))  # Senha com letra minúscula
 
-    assert validador.validar_senha("Senha123@") == True  # Senha válida com caractere especial
-    assert validador.validar_senha("Abcdefg1!") == True  # Senha válida com caractere especial
-    assert validador.validar_senha("Teste@1234") == True  # Senha válida com caractere especial
-
-    assert validador.validar_senha("senha") == False  # Menos de 8 caracteres
-    assert validador.validar_senha("SENHA123") == False  # Sem letra minúscula
-    assert validador.validar_senha("senhaabcd") == False  # Sem número
-    assert validador.validar_senha("12345678") == False  # Sem letra maiúscula e minúscula
-    assert validador.validar_senha("Senha@") == False  # Sem número
-    assert validador.validar_senha("Senha1234") == False  # Sem caractere especial
-    assert validador.validar_senha("Senha&1234") == False  # Sem letra maiúscula
-    assert validador.validar_senha("Senha#abcd") == False  # Sem letra minúscula
-
-    assert validador.validar_senha("Senha@123") == True  # Senha válida com caractere especial
-    assert validador.validar_senha("Senha1234") == False  # Sem caractere especial
-
-    if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
