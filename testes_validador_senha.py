@@ -23,6 +23,7 @@ def validar_senha(senha):
     # Se a senha passar por todas as verificações, é válida
     return True
 
+
 class TestValidadorSenha(unittest.TestCase):
     
     def test_comprimento_minimo(self):
