@@ -1,20 +1,26 @@
 import unittest
 
 def validar_senha(senha):
+    # Verificar o comprimento da senha
     if len(senha) < 8:
         return False
 
+    # Verificar se a senha contém pelo menos um número
     tem_numero = any(char.isdigit() for char in senha)
     if not tem_numero:
         return False
 
+    # Verificar se a senha contém pelo menos uma letra maiúscula
     tem_maiuscula = any(char.isupper() for char in senha)
     if not tem_maiuscula:
         return False
 
+    # Verificar se a senha contém pelo menos uma letra minúscula
     tem_minuscula = any(char.islower() for char in senha)
     if not tem_minuscula:
         return False
+
+    # Se a senha passar por todas as verificações, é válida
     return True
 
 class TestValidadorSenha(unittest.TestCase):
