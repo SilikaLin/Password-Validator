@@ -28,7 +28,7 @@ class TestValidadorSenha(unittest.TestCase):
     
     def test_comprimento_minimo(self):
         self.assertFalse(validar_senha("abc12"))  # Senha com menos de 8 caracteres
-        self.assertTrue(validar_senha("abc12345"))  # Senha com 8 caracteres
+        self.assertTrue(validar_senha("Abc12345"))  # Senha com 8 caracteres
     
     def test_pelo_menos_um_numero(self):
         self.assertFalse(validar_senha("SenhaSemNumero"))  # Senha sem números
