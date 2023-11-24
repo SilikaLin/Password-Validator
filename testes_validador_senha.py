@@ -39,7 +39,7 @@ class TestValidadorSenha(unittest.TestCase):
     
     def test_pelo_menos_uma_letra_minuscula(self):
         self.assertFalse(validar_senha("SENHA_MAISCULA123"))  # Senha sem letra minúscula
-        self.assertTrue(validar_senha("senha_minuscula123"))  # Senha com letra minúscula
+        self.assertTrue(validar_senha("Senha_Minuscula123"))  # Senha com letra minúscula
 
 
 if __name__ == '__main__':
