@@ -20,3 +20,6 @@ def test_validador_senha():
 
     assert validador.validar_senha("Senha@123") == True  # Senha válida com caractere especial
     assert validador.validar_senha("Senha1234") == False  # Sem caractere especial
+
+    if __name__ == "__main__":
+    unittest.main()
