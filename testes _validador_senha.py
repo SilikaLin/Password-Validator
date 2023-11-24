@@ -1,3 +1,5 @@
+import unittest
+
 from validador_senha import ValidadorSenha
 
 def test_validador_senha():
