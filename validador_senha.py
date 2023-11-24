@@ -1,4 +1,5 @@
 class ValidadorSenha:
+
     def validar_senha(self, senha):
         if len(senha) < 8:
             return False
